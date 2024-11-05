@@ -95,3 +95,105 @@ You need to create two vpc networks, i.e. myvpc1 and myvpc2. In myvpc1 (any zone
         GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY '123456' WITH GRANT OPTION;
         FLUSH PRIVILEGES;
         ```
+        建立資料庫<br>
+        ```sql
+        CREATE DATABASE testdb;
+        USE testdb;
+        CREATE TABLE addrbook(name varchar(50) not null, phone var(10));
+        INSERT INTO addrbook(name, phone) values("tom", "0987654321");
+        INSERT INTO addrbook(name, phone) values("mary", "0912345678");
+        SELECT * FROM addrbook;
+        ```
+    5. 編輯`mariadb`配置檔：<br>
+        ```bash
+        sudo vim /ect/mysql/mariadb.conf.d/50-server.cnf
+        ```
+        將其中的<br>
+        ```
+        bind-address = 127.0.0.1
+        ```
+        註解掉或改為<br>
+        ```
+        bind-address = 0.0.0.0
+        ```
+5. 在`www1`和`www2`中，測試與`mydb`SQL的連線、安裝`php`並建立`php`檔：<br>
+    1. 安裝`mysql-client`
+        ```bash
+        sudo apt install mysql-client
+        ```
+    2. 連線至`mydb`：
+        ```bash
+        mysql -h {mydb IP} -uroot -p
+        ```
+        確認可以正常連線後
+    3. 安裝`php`：
+        ```bash
+        sudo apt install php libapache2-mod-php php-mysql
+        sudo systemctl restart apache2
+        ```
+    4. 建立`/var/www/html/testdb.php`：
+        ```bash
+        sudo vim /var/www/html/testdb.php
+        ```
+        ```sql
+        <?php
+        $servername="10.20.0.2"; //mydb 的 IP
+        $username="root";
+        $password="123456";
+        $dbname="testdb";
+
+        $conn = new mysqli($servername, $username, $password, $dbname);
+
+        if ($conn->connect_error){
+                die("connection failed:" .$conn->connect_error);
+        }
+        else{
+                echo "connect OK!" . "<br>";
+        }
+
+        $sql="select * from addrbook";
+        $result=$conn->query($sql);
+
+        if($result->num_rows>0){
+                while($row=$result->fetch_assoc()){
+                        echo "name:" .$row["name"]."\tphone:" .$row["phone"]. "<br>";
+                }
+        } else {
+                echo "0 record";
+        }
+        ?>
+        <p>www1</p> //加上www1或www2比較好知道load balancer是否運作正常
+        ```
+6. 建立Load Balancer：<br>
+    1. 建立Instance group：<br>
+        - Compute Engine
+            - Instance groups: `CREATE INSTANCE GROUP`
+        - New Unmanaged Instance Group
+            - Name: `www-group`
+            - Region: `asia-east1 (Taiwan)`
+            - Zone: `asia-east1-b` （看你的vm的zone）
+            - Network: `myvpc1`
+            - VM Instances: `www1 and www2`
+    2. 建立Load Balancer：
+        - Network Services
+            - Load balancing: `CREATE LOAD BALANCER`
+        - Type of load balancer: `Application Load Balancer (HTTP/HTTPS)`
+        - Public facing of internal: `Public facing (external)`
+        - Global of single region deployment: `Best for regional workloads`
+        - Configure:
+            - Load Balancer name: `mylb`
+            - Region: `asia-east1 (Taiwan)`
+            - Network: `myvpc1`
+            - Frontend Configuration:
+                - Name: `myfrontend`
+                - Done.
+            - Backend configuration: Create backend service
+                - Name: `mybackend`
+                - Backend type: `instance group`
+                - Backends:
+                    - Instance group: `www-group`
+                    - Port numbers: `80`
+                    - Health check: Create a Health check
+                        - Name: `httphealthcheck`
+7. 使用瀏覽器連線並查看Load balancer是否正常運作：<br>
+
