@@ -10,6 +10,7 @@ Topics:<br>
 - [VPC Network](20241022.md#建立新的VPC-network)
 - [Cloud SQL](20241029.md#Cloud-SQL)
 - [Load Balancer](20241029.md#Load-Balancer)
+- [期中練習](midterm.md)
 
 進度：
 - [x] [第一週（2024/09/10）](20240910.md)
@@ -34,4 +35,6 @@ Topics:<br>
 - [x] [第八週（2024/10/29）](20241029.md)
     - [x] 建立檔案
     - [x] 完成編輯
-
+- [x] [期中練習（2024/11/05）](midterm.md)
+    - [x] 建立檔案
+    - [x] 完成編輯
