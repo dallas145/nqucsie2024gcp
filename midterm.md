@@ -195,5 +195,6 @@ You need to create two vpc networks, i.e. myvpc1 and myvpc2. In myvpc1 (any zone
                     - Port numbers: `80`
                     - Health check: Create a Health check
                         - Name: `httphealthcheck`
-7. 使用瀏覽器連線並查看Load balancer是否正常運作：<br>
+7. 找到Load balancer的IP並使用瀏覽器連線並查看Load balancer是否正常運作：<br>
+    ![](src/linux-midterm.png)
 
