@@ -1,7 +1,7 @@
 # nqucsie2024gcp
 2024 gcp課程：筆記
 
-本筆記嘗試使用[nb](https://xwmx.github.io/nb/#home)進行管理，commit 的標題若為`[nb]`開頭，代表該 commit 是透過`nb`操作的[^1]。
+本筆記嘗試使用[nb](https://xwmx.github.io/nb/#home)進行管理[^1]，commit 的標題若為`[nb]`開頭，代表該 commit 是透過`nb`操作的。
 [^1]: I use arch BTW.
 
 ## Topics:
@@ -20,10 +20,9 @@
 參考：[Google Cloud 說明文件](https://cloud.google.com/load-balancing/docs/proxy-only-subnets#gcloud)<br>
 範例：[proxy-only subnet](20241112.md#proxy-only-subnet)
 
-## Tips:
-- 有時候網頁界面會有bug，可以去找對應的指令，直接在`Cloud Shell`操作。
+## 進度
 
-| 進度（劃掉代表完成） |
+| 週次（劃掉代表完成） |
 | :------------------: |
 | ~~[第一週 (2024/09/10)](20240910.md)~~ |
 | ~~第二週 (2024/09/17) （放假）~~ |
