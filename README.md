@@ -15,6 +15,16 @@
 - [Unmanaged load balancer block the direct access to VMs](20241112.md#block-the-direct-access-to-vm)
 - [Managed load balancer](20241112.md#managed-load-balancer)
 
+## 常用
+Http server auto creation script:
+```bash
+#!/bin/bash
+apt update
+apt -y install apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><p>Linux startup script added directly. $(hostname -I)</p></body></html>
+```
+
 ## 遇到的問題
 在新的vpc建立load balancer時，需要reserve proxy-only subnet，有時會有奇怪bug，無法從網頁端reserve，必須直接從Cloud Shell用指令建立subnet<br>
 參考：[Google Cloud 說明文件](https://cloud.google.com/load-balancing/docs/proxy-only-subnets#gcloud)<br>
