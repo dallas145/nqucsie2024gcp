@@ -517,7 +517,7 @@ transition: wipe
 ![height:300px](assets/gke-step-11.png)
 
 <!--
-_footer: 實做結束
+_footer: 實作結束
 -->
 
 ---
