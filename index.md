@@ -101,7 +101,7 @@ _header: GKE的功能與優勢
 ![bg height:70%](assets/gke-architecture.svg)
 
 <!--
-_footer: 圖片來源：[Kubernetes 是什麼？Docker、K8s、GKE 優勢比較 - Cloud Ace](https://blog.cloud-ace.tw/application-modernization/devops/docker-k8s-gke-intro/#Kubernetes（K8s）是什麼？Docker_容器編排工具)
+_footer: 圖片來源：[GKE cluster architecture  |  Google Kubernetes Engine (GKE)  |  Google Cloud](https://cloud.google.com/kubernetes-engine/docs/concepts/cluster-architecture)
 -->
 
 ---
