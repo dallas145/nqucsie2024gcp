@@ -15,6 +15,21 @@
 - [Unmanaged load balancer block the direct access to VMs](20241112.md#block-the-direct-access-to-vm)
 - [Managed load balancer](20241112.md#managed-load-balancer)
 - [Cloud Router](20241119.md#cloud-router)
+- [Monitoring & Alerting](20241119.md#monitoring-&-alerting)
+- [伺服器Region與連線速度的關係](20241119.md#伺服器region與連線速度的關係)
+- [使用Load Balancer透過HTTPS連線](20241119.md#使用load-balancer透過https連線)
+- [Cloud CDN (Content Delivery Network)](20241119.md#cloud-cdn-(content-delivery-network))
+- [建立沒有Externl IP的VM，用Managed Load Balancer連線](20241126.md#實驗)
+- [進階負載均衡器](20241126.md#進階負載均衡器)
+- [Internal Load Balancer & Cloud DNS](20241126.md#internal-load-balancer-&-cloud-dns)
+- [Cloud Run Function](20241203.md#cloud-run-function)
+- [Connecting to Cloud SQL with Cloud Functions using CLI (1)](20241203.md#connecting-to-cloud-sql-with-cloud-functions-using-cli)
+- [Connecting to Cloud SQL with Cloud Functions using CLI（接續上週）](20241210.md#connecting-to-cloud-sql-with-cloud-functions-using-cli（接續上週）)
+- [Google App Engine](20241210.md#google-app-engine)
+- [Cloud RUN](20241210.md#cloud-run)
+- [Cloud RUN（接續上週）](20241217.md#cloud-run)
+- [建立 Artifact Registry](20241217.md#建立-artifact-registry)
+- [Terraform](20241217.md#terraform)
 
 ## 常用
 Http server auto creation script:
