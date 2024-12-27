@@ -14,6 +14,7 @@
 - [期中練習](midterm.md)
 - [Unmanaged load balancer block the direct access to VMs](20241112.md#block-the-direct-access-to-vm)
 - [Managed load balancer](20241112.md#managed-load-balancer)
+- [Cloud Router](20241119.md#cloud-router)
 
 ## 常用
 Http server auto creation script:
@@ -31,7 +32,7 @@ cat <<EOF > /var/www/html/index.html
 範例：[proxy-only subnet](20241112.md#proxy-only-subnet)
 
 ## 遇到的問題 2
-[第十五週](20241217.md/#terraform-範例4) 的 Terraform 範例4，老師提供的 `variables.tf` 格式好像有問題，我有稍微做一點修正。
+[第十五週](20241217.md#terraform-範例4) 的 Terraform 範例4，老師提供的 `variables.tf` 格式好像有問題，我有稍微做一點修正。
 
 ## 進度
 
