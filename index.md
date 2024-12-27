@@ -557,3 +557,5 @@ _footer: ![width:24px](assets/arch-linux.png) I use Arch, BTW.
 
 ## 報告結束
 ## 感謝聆聽
+
+**筆記網址： [dallas145/nqucsie2024gcp](https://github.com/dallas145/nqucsie2024gcp)**
