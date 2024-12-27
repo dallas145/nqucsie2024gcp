@@ -1,6 +1,8 @@
 # nqucsie2024gcp
 2024 gcp課程：筆記
 
+**[期末報告](https://dallas145.github.io/nqucsie2024gcp)**
+
 本筆記嘗試使用[nb](https://xwmx.github.io/nb/#home)進行管理[^1]，commit 的標題若為`[nb]`開頭，代表該 commit 是透過`nb`操作的。
 [^1]: I use Arch BTW.
 
